@@ -1,0 +1,37 @@
+h2 { 
+    color: #588b8b ;
+    font-family: 'Inconsolata', monospace;
+    
+    font-size: large;
+    margin-left: 10% ;
+    margin-right: 10% ;
+}
+
+.shadowbox {
+    background-color: #FFD5C2;
+    border: 3px solid black;
+    
+    
+}
+
+.shadowbox .tags {
+    padding-left: 3%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+} 
+.shadowbox .red { color: red;}
+.shadowbox .gray { color: gray;}
+.shadowbox .like { 
+    cursor: pointer;
+    margin-top: 0px;
+    margin-left: 75%;
+    margin-right: auto;
+}
+
+.shadowbox .like > img {
+   
+    width: 20px;
+    
+}
+.shadowbox > img { width: 100% };
+

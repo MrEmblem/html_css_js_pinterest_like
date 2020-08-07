@@ -1,0 +1,106 @@
+/* le conteneur de la grille */
+html {
+    font-family: 'Lobster', cursive;
+    /* background-color: rgb(255, 237, 228); */
+    background-color: #c8553d;
+
+}
+
+
+
+header {
+    margin: -8px ;
+    margin-bottom: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: a;    
+    background-color: #f28f3b;
+    height: 75px;
+    
+}
+nav {
+    
+    
+    margin-left: 5%;
+    margin-right: 5%;
+    align-self: center;
+    display: flex;
+    flex: 1;
+    
+    align-items: stretch;
+    
+}
+
+img {
+    width: 100%;
+}
+
+#headerlink {
+    color: #588b8b;
+    text-decoration-color: #c8553d;
+    align-self: flex-start;
+    font-size: 40px;
+    margin-left: 5px;
+    
+}
+
+likes-counter{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 20px;
+    margin-right: auto;
+}
+
+input{
+    margin: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+#search{
+    margin: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.grille{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px 10px;
+    
+}
+
+.grille > div {
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: #588B8B;
+    
+}
+
+
+
+.grille > div > a{
+    
+    text-decoration: none;
+    width: min-content;
+}
+
+.grille ::shadow {
+    background-color: #588b8b;
+}
+
+.divrelatives{
+    position: relative;
+}
+.divrelatives .like{
+    
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
