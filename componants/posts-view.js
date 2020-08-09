@@ -33,8 +33,7 @@ export default class PostsView extends HTMLElement {
             @import "./styles/shadow.css";
             
             
-            // TODO changer la typo des hastags et des titres
-            // TODO decoler les textes des bords
+            
           </style>
           <div class="shadowbox">
                 <h2><b>${title}</b></h2>

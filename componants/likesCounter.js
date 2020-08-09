@@ -24,21 +24,34 @@ export default class LikesCounter extends HTMLElement {
         
             `
             <style>
+                span{
+                    cursor: pointer;
+                }
                 
             </style>
             <span> <img src="./img/icons8-heart-50.png" style="width: 35px;"> ${newValue}</span>`
+
+            this.counter = this.__root.querySelector('span')
+        this.counter.addEventListener('click', (event) => {
+            
+            const counterEvent = new CustomEvent('getlikes', {
+                detail: {
+                    
+                },
+            })
+            this.dispatchEvent(counterEvent)
+        })
         /*
         1. Le premier argument de la méthode est le nom de l’attribut,
         2. le deuxième argument est l’ancienne valeur de l’attribut,
         3. le troisième argument est la nouvelle valeurr de l’attribut.
         */
-        console.log('attribute', attribute)
-        console.log('oldValue', oldValue)
-        console.log('newValue', newValue)
+        // console.log('attribute', attribute)
+        // console.log('oldValue', oldValue)
+        // console.log('newValue', newValue)
         }
 
     connectedCallback() {
-        
         
     }
     

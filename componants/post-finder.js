@@ -16,7 +16,7 @@ export default class PostFinder extends HTMLElement{
 
         this.__root.innerHTML =
         `
-        <input type="text" name="" id="" >
+        <input type="search" placeholder="rechercher par hashtags" >
         `
         this.inputquery = this.__root.querySelector("input")
 
