@@ -12,7 +12,8 @@ export default class LikesCounter extends HTMLElement {
     static get observedAttributes() {
         return ['nbrlikes']
     }
-
+    //TODO ajouter une fonction pour cliquer sur l'element et trier les posts likés
+    //TODO Stocker les likes dans le local storage
     attributeChangedCallback(attribute, oldValue, newValue) {
         /* Une propriété portant le nom de l’attribut observé est
         ajoutée au composant. Si l’attribut transmis au composant

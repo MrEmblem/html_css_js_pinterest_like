@@ -1,10 +1,13 @@
 import PostsView from './componants/posts-view.js'
 import LikesCounter from './componants/likesCounter.js'
+import PostsFinder from './componants/post-finder.js'
 
 customElements.define('likes-counter', LikesCounter)
 customElements.define('posts-view', PostsView)
+customElements.define('posts-finder', PostsFinder)
 const main = document.querySelector('.grille')
 const counter = document.querySelector('likes-counter')
+const postfinder = document.querySelector('posts-finder')
 let posts = []
 let likedPosts = []
 
@@ -19,7 +22,7 @@ const getPosts = () => {
       
       posts = json
 
-      json.forEach((post) => {
+      posts.forEach((post) => {
         const newElement = document.createElement('posts-view')
         newElement.post = post
 
@@ -34,13 +37,51 @@ const getPosts = () => {
     })
 }
 
+postfinder.addEventListener('queryupdate',(event) => {
+  const {querystring} = event.detail
+  querypost(querystring)
+})
+
+const querypost = (query) => {
+
+  fetch(`http://127.0.0.1/rendu_1/api.php?tag=${query}`) // requête http
+    .then((response) => {
+      // réponse du serveur
+      return response.json() // récupération du json dans la réponse et conversion en objet js
+    })
+    .then((json) => {
+      // récupération de l’objet js
+      
+      console.log(json)
+      main.innerHTML = ''
+      json.forEach((post) => {
+        const newElement = document.createElement('posts-view')
+        newElement.post = post
+
+        newElement.isliked = likedPosts.some(
+          (likedPost) => likedPost === post.id
+        )
+
+        likeHandler(newElement)
+        likeNumberUpdate()
+        main.appendChild(newElement)
+      })
+
+    })
+}
 
 getPosts()
+
+const postfind = () => {
+  counter.setAttribute('nbrlikes',input)
+}
 
 const likeNumberUpdate = () =>{
   let nbrlikes = likedPosts.length
   counter.setAttribute('nbrlikes',nbrlikes)
 }
+
+
 
 const likeHandler = (element) =>{
   element.addEventListener('like',(event) => {
